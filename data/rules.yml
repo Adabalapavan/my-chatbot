@@ -1,0 +1,39 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Wikipedia search
+  steps:
+  - intent: ask_wikipedia
+  - action: action_wikipedia_search
+
+- rule: Respond to Wikipedia search
+- steps:
+  - intent: ask_wikipedia
+  - action: action_wikipedia_search
+
+-  rule: Wikipedia info
+- steps:
+  - intent: ask_wikipedia
+  - action: action_wikipedia_search
+
+- rule: Answer Wikipedia question
+  steps:
+  - intent: ask_wikipedia
+  - action: action_wikipedia_search
+
+- rule: Handle fallback with Wikipedia search
+  steps:
+  - intent: nlu_fallback
+  - action: action_wiki_search
+
